@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0jn63bywegjp"]
+
+[ext_resource type="Script" path="res://Control.gd" id="1_0vp73"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0vp73")
+
+[node name="CLAC" type="Button" parent="."]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 336.0
+offset_right = 276.0
+offset_bottom = 415.0
+text = "Calculate"
+
+[node name="CLEAR" type="Button" parent="."]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 334.0
+offset_right = 590.0
+offset_bottom = 413.0
+text = "Clear text "
+
+[node name="EXIT" type="Button" parent="."]
+layout_mode = 0
+offset_left = 673.0
+offset_top = 334.0
+offset_right = 886.0
+offset_bottom = 413.0
+text = "Exit program "
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 34.0
+offset_right = 290.0
+offset_bottom = 80.0
+text = "INPUT: "
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 29.0
+offset_right = 384.0
+offset_bottom = 62.0
+
+[connection signal="pressed" from="CLAC" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CLEAR" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="CLEAR" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="EXIT" to="." method="_on_exit_pressed"]

@@ -80,10 +80,10 @@ text = "Clear"
 
 [node name="Exit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 385.0
-offset_top = 254.0
-offset_right = 500.0
-offset_bottom = 333.0
+offset_left = 389.0
+offset_top = 250.0
+offset_right = 504.0
+offset_bottom = 329.0
 text = "Exit"
 
 [connection signal="pressed" from="calc" to="." method="_on_calc_pressed"]
