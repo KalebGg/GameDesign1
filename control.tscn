@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0vp73")
 
-[node name="CLAC" type="Button" parent="."]
+[node name="btnCalc" type="Button" parent="."]
 layout_mode = 0
 offset_left = 63.0
 offset_top = 336.0
@@ -21,7 +21,7 @@ offset_right = 276.0
 offset_bottom = 415.0
 text = "Calculate"
 
-[node name="CLEAR" type="Button" parent="."]
+[node name="btnClear" type="Button" parent="."]
 layout_mode = 0
 offset_left = 377.0
 offset_top = 334.0
@@ -29,7 +29,7 @@ offset_right = 590.0
 offset_bottom = 413.0
 text = "Clear text "
 
-[node name="EXIT" type="Button" parent="."]
+[node name="btnExit" type="Button" parent="."]
 layout_mode = 0
 offset_left = 673.0
 offset_top = 334.0
@@ -39,20 +39,28 @@ text = "Exit program "
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 51.0
-offset_top = 34.0
-offset_right = 290.0
-offset_bottom = 80.0
-text = "INPUT: "
+offset_left = 50.0
+offset_top = 59.0
+offset_right = 900.0
+offset_bottom = 326.0
 
 [node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 0
-offset_left = 124.0
-offset_top = 29.0
-offset_right = 384.0
-offset_bottom = 62.0
+offset_left = 125.0
+offset_top = 6.0
+offset_right = 422.0
+offset_bottom = 69.0
 
-[connection signal="pressed" from="CLAC" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="CLEAR" to="." method="_on_clear_pressed"]
-[connection signal="pressed" from="CLEAR" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="EXIT" to="." method="_on_exit_pressed"]
+[node name="LineEdit2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 5.0
+offset_right = 793.0
+offset_bottom = 68.0
+
+[connection signal="pressed" from="btnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="btnCalc" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_exit_pressed"]
