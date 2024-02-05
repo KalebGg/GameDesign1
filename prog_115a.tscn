@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm6j8tp768lwo"]
+
+[ext_resource type="Script" path="res://prog115a.gd" id="1_r1tw0"]
+[ext_resource type="Script" path="res://btnCalc.gd" id="2_dvr1p"]
+
+[node name="prog115a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r1tw0")
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 275.0
+
+[node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 338.0
+offset_right = 362.0
+offset_bottom = 452.0
+text = "Calculate"
+script = ExtResource("2_dvr1p")
+
+[node name="btnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 339.0
+offset_right = 741.0
+offset_bottom = 453.0
+text = "clear"
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 785.0
+offset_top = 338.0
+offset_right = 1125.0
+offset_bottom = 452.0
+text = "Exit Program"
+
+[connection signal="pressed" from="btnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]
