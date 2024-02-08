@@ -3,12 +3,10 @@ extends Control
 
 
 func _on_btn_calc_pressed():
-	pass # Replace with function body.
-
-
+	var num1 = 1-50
+	$ItemList.add_item(num1)
+	var squared = num1 
 func _on_btn_clear_pressed():
-	pass # Replace with function body.
-
-
+	$ItemListnumber.clear()
 func _on_btn_exit_pressed():
-	pass # Replace with function body.
+	$get_tree.quit

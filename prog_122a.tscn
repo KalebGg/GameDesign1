@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv8dr60vgyw05"]
+
+[ext_resource type="Script" path="res://prog122a.gd" id="1_or3kf"]
+
+[node name="prog122a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_or3kf")
+
+[node name="LineEdit1" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 1159.0
+offset_bottom = 383.0
+
+[node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_top = 438.0
+offset_right = 345.0
+offset_bottom = 536.0
+text = "Calculate"
+
+[node name="btnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 441.0
+offset_right = 753.0
+offset_bottom = 538.0
+text = "Clear"
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 793.0
+offset_top = 439.0
+offset_right = 1131.0
+offset_bottom = 533.0
+text = "Exit"
