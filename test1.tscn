@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds1cofmkmm1dl"]
+
+[ext_resource type="Script" path="res://test1.gd" id="1_fr71n"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fr71n")
+
+[node name="Calc" type="Button" parent="."]
+layout_mode = 0
+offset_top = 233.0
+offset_right = 210.0
+offset_bottom = 287.0
+text = "Calculate"
+
+[node name="Clear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 263.0
+offset_top = 234.0
+offset_right = 473.0
+offset_bottom = 288.0
+text = "Clear"
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 234.0
+offset_right = 734.0
+offset_bottom = 288.0
+text = "Exit"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 126.0
+offset_right = 391.0
+offset_bottom = 32.0
+
+[node name="LineEdit2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 43.0
+offset_right = 388.0
+offset_bottom = 74.0
+
+[node name="Area" type="Label" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 81.0
+offset_right = 143.0
+offset_bottom = 123.0
+
+[node name="Perim" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 151.0
+offset_right = 147.0
+offset_bottom = 193.0
+
+[connection signal="pressed" from="Calc" to="." method="_on_calc_pressed"]
+[connection signal="pressed" from="Clear" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
