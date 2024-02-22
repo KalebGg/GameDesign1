@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b65f1k3vs5o1d"]
+[gd_scene load_steps=22 format=3 uid="uid://b65f1k3vs5o1d"]
 
 [ext_resource type="Script" path="res://plt_world1.gd" id="1_c26rx"]
 [ext_resource type="Script" path="res://plt_player.gd" id="2_2tctj"]
 [ext_resource type="Texture2D" uid="uid://bbl22jgxjjst3" path="res://icon.svg" id="3_pw2l1"]
+[ext_resource type="Texture2D" uid="uid://cik1ypypntucj" path="res://assets/sprites/characters.png" id="4_e6o2x"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_odcq5"]
 b = Vector2(59, 0)
@@ -12,6 +13,101 @@ b = Vector2(59, 0)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2c1bq"]
 radius = 15.0
 height = 52.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rg1t1"]
+atlas = ExtResource("4_e6o2x")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybgqf"]
+atlas = ExtResource("4_e6o2x")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22cly"]
+atlas = ExtResource("4_e6o2x")
+region = Rect2(192, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qung8"]
+atlas = ExtResource("4_e6o2x")
+region = Rect2(224, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yachs"]
+atlas = ExtResource("4_e6o2x")
+region = Rect2(256, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fu5ow"]
+atlas = ExtResource("4_e6o2x")
+region = Rect2(384, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypchd"]
+atlas = ExtResource("4_e6o2x")
+region = Rect2(416, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dc56v"]
+atlas = ExtResource("4_e6o2x")
+region = Rect2(448, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42nl4"]
+atlas = ExtResource("4_e6o2x")
+region = Rect2(480, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vp03y"]
+atlas = ExtResource("4_e6o2x")
+region = Rect2(512, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bmcf"]
+atlas = ExtResource("4_e6o2x")
+region = Rect2(544, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_12yyk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rg1t1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybgqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22cly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qung8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yachs")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fu5ow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypchd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dc56v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42nl4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vp03y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bmcf")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_feju5"]
 size = Vector2(23, 69)
@@ -24,7 +120,7 @@ script = ExtResource("1_c26rx")
 [node name="world" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world"]
-polygon = PackedVector2Array(12, 115, 86, 120, 35, 183, 26, 232, 32, 289, 48, 341, 75, 383, 179, 391, 260, 375, 327, 346, 415, 323, 478, 375, 531, 354, 624, 328, 706, 285, 720, 285, 733, 287, 741, 292, 752, 294, 753, 298, 751, 304, 742, 301, 729, 296, 723, 297, 711, 302, 699, 309, 685, 314, 680, 323, 681, 339, 686, 347, 700, 354, 722, 359, 769, 368, 799, 354, 854, 363, 939, 396, 933, 358, 1030, 336, 1087, 336, 1147, 309, 1270, 309, 1364, 314, 1441, 369, 1492, 336, 1543, 318, 1653, 320, 1671, 314, 1679, 305, 1690, 308, 1701, 301, 1689, 296, 1681, 297, 1663, 295, 1675, 286, 1687, 286, 1707, 285, 1763, 267, 1792, 266, 1817, 272, 1734, 297, 1722, 306, 1708, 317, 1722, 315, 1740, 318, 1726, 320, 1713, 325, 1707, 330, 1715, 342, 1744, 349, 1757, 341, 1763, 328, 1777, 309, 1785, 296, 1789, 300, 1795, 302, 1789, 306, 1784, 318, 1788, 328, 1835, 323, 1886, 299, 1917, 296, 1948, 282, 1995, 276, 1994, 271, 1981, 270, 1996, 265, 2007, 268, 2015, 265, 2028, 257, 2055, 255, 2120, 237, 2089, 251, 2084, 258, 2079, 269, 2072, 280, 2069, 294, 2070, 308, 2062, 309, 2053, 309, 2044, 305, 2036, 308, 2039, 301, 2037, 297, 2031, 298, 2027, 294, 2020, 297, 2009, 295, 1987, 298, 1963, 305, 1955, 312, 1947, 308, 1936, 311, 1922, 309, 1908, 316, 1893, 326, 1911, 336, 1935, 333, 1962, 343, 1992, 335, 2009, 348, 2026, 347, 2041, 334, 2047, 310, 2073, 307, 2082, 307, 2095, 303, 2101, 298, 2109, 288, 2113, 292, 2119, 294, 2133, 293, 2137, 287, 2146, 294, 2151, 292, 2155, 287, 2147, 283, 2136, 278, 2130, 273, 2125, 271, 2119, 270, 2111, 268, 2140, 267, 2152, 271, 2167, 258, 2240, 258, 2261, 386, 2268, 534, 15, 636)
+polygon = PackedVector2Array(12, 115, 86, 120, 63, 141, 53, 156, 44, 168, 35, 183, 26, 232, 32, 289, 48, 341, 75, 383, 179, 391, 260, 375, 327, 346, 415, 323, 478, 375, 531, 354, 624, 328, 706, 285, 720, 285, 733, 287, 741, 292, 752, 294, 753, 298, 751, 304, 742, 301, 729, 296, 723, 297, 711, 302, 699, 309, 685, 314, 680, 323, 681, 339, 686, 347, 700, 354, 722, 359, 769, 368, 799, 354, 854, 363, 939, 396, 933, 358, 1030, 336, 1087, 336, 1147, 309, 1270, 309, 1364, 314, 1441, 369, 1492, 336, 1543, 318, 1653, 320, 1671, 314, 1679, 305, 1690, 308, 1701, 301, 1689, 296, 1681, 297, 1663, 295, 1675, 286, 1687, 286, 1707, 285, 1763, 267, 1792, 266, 1817, 272, 1734, 297, 1722, 306, 1708, 317, 1722, 315, 1740, 318, 1726, 320, 1713, 325, 1707, 330, 1715, 342, 1744, 349, 1757, 341, 1763, 328, 1777, 309, 1785, 296, 1789, 300, 1795, 302, 1789, 306, 1784, 318, 1788, 328, 1835, 323, 1886, 299, 1917, 296, 1948, 282, 1995, 276, 1994, 271, 1981, 270, 1996, 265, 2007, 268, 2015, 265, 2028, 257, 2055, 255, 2120, 237, 2089, 251, 2084, 258, 2079, 269, 2072, 280, 2069, 294, 2070, 308, 2062, 309, 2053, 309, 2044, 305, 2036, 308, 2039, 301, 2037, 297, 2031, 298, 2027, 294, 2020, 297, 2009, 295, 1987, 298, 1963, 305, 1955, 312, 1947, 308, 1936, 311, 1922, 309, 1908, 316, 1893, 326, 1911, 336, 1935, 333, 1962, 343, 1992, 335, 2009, 348, 2026, 347, 2041, 334, 2047, 310, 2073, 307, 2082, 307, 2095, 303, 2101, 298, 2109, 288, 2113, 292, 2119, 294, 2133, 293, 2137, 287, 2146, 294, 2151, 292, 2155, 287, 2147, 283, 2136, 278, 2130, 273, 2125, 271, 2119, 270, 2111, 268, 2140, 267, 2152, 271, 2167, 258, 2240, 258, 2261, 386, 2268, 534, 15, 636)
 
 [node name="Polygon2D" type="Polygon2D" parent="world/CollisionPolygon2D"]
 color = Color(0.658824, 0.309804, 0.117647, 1)
@@ -44,6 +140,7 @@ texture = SubResource("PlaceholderTexture2D_ygw8l")
 script = ExtResource("2_2tctj")
 
 [node name="Sprite2D" type="Sprite2D" parent="plt_player"]
+visible = false
 position = Vector2(55.5, 61.75)
 scale = Vector2(0.25, 0.375)
 texture = ExtResource("3_pw2l1")
@@ -55,6 +152,12 @@ shape = SubResource("CapsuleShape2D_2c1bq")
 [node name="Camera2D" type="Camera2D" parent="plt_player"]
 position = Vector2(55, 63)
 zoom = Vector2(1.4, 1.4)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="plt_player"]
+position = Vector2(57.25, 57.75)
+scale = Vector2(1.92188, 1.98438)
+sprite_frames = SubResource("SpriteFrames_12yyk")
+animation = &"jump"
 
 [node name="interact" type="RigidBody2D" parent="."]
 position = Vector2(422, 299)
