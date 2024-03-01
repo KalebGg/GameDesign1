@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxjeu28pg60vh"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7alvs"]
+friction = 0.5
+bounce = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_w4f8n"]
+radius = 10.0
+height = 10.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hfdny"]
+radius = 61.0737
+
+[node name="phys_ball" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_7alvs")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(433, 175)
+scale = Vector2(6.30715, 11.9)
+mesh = SubResource("SphereMesh_w4f8n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(433, 173)
+shape = SubResource("CircleShape2D_hfdny")

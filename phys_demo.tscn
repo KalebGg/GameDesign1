@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://dreq0okf1afgh"]
+
+[ext_resource type="Script" path="res://phys_demo.gd" id="1_fbye7"]
+[ext_resource type="PackedScene" uid="uid://cxjeu28pg60vh" path="res://phys_ball.tscn" id="2_ssx0j"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jewip"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gm043"]
+size = Vector2(1139, 144.5)
+
+[node name="phys_demo" type="Node2D"]
+script = ExtResource("1_fbye7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(571, 596)
+scale = Vector2(1137.25, 147.25)
+texture = SubResource("PlaceholderTexture2D_jewip")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(570.5, 595.25)
+shape = SubResource("RectangleShape2D_gm043")
+
+[node name="phys_ball" parent="." instance=ExtResource("2_ssx0j")]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 271.0
+offset_bottom = 88.0
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 39.0
+offset_right = 260.0
+offset_bottom = 75.0
+text = "Friction"
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 136.0
+offset_bottom = 33.0
+text = "Gravity"
+
+[node name="HSlider" type="HSlider" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 66.0
+offset_top = 5.0
+offset_right = 257.0
+offset_bottom = 21.0
