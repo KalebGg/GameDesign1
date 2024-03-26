@@ -26,8 +26,6 @@ func interact(player):
 	#player.pickup_item(value)
 	remove()
 
-func _init(default_value: int = 1):
-	value = default_value
 
 func _process(delta):
 	for player in get_tree().get_nodes_in_group("Player"):
