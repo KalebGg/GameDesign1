@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d30b5mvr8ugic"]
+[gd_scene load_steps=6 format=3 uid="uid://d30b5mvr8ugic"]
 
 [ext_resource type="Texture2D" uid="uid://bji2kukajsj58" path="res://assets/sprites/zeldalike/Overworld.png" id="1_8p62c"]
 [ext_resource type="PackedScene" uid="uid://dhh4bhidbdogx" path="res://td_player.tscn" id="2_52bdy"]
+[ext_resource type="PackedScene" uid="uid://dfx5t41cnwp35" path="res://td_enemy.tscn" id="3_jqq2t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yrc1g"]
 texture = ExtResource("1_8p62c")
@@ -1098,3 +1099,7 @@ layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(262137, 262144, 12, 262138, 327680, 12, 262139, 393216, 12, 327675, 393216, 13, 327673, 262144, 13, 393209, 262144, 14, 393211, 393216, 14, 327674, 458752, 11, 393210, 458752, 12, 196607, 327680, 1, 262143, 327680, 2, 262142, 262144, 2, 196606, 262144, 1, 4, 524288, 7, -65532, 524288, 6, -65531, 589824, 6, 5, 589824, 7, 65541, 589824, 8, 65540, 524288, 8, 6, 589824, 7, -65530, 589824, 6, -65529, 589824, 6, -65528, 589824, 6, -65527, 589824, 6, 7, 589824, 7, 8, 589824, 7, 9, 589824, 7, 65542, 589824, 8, 65543, 589824, 8, 65544, 589824, 8, 65545, 589824, 8, -65526, 655360, 6, 10, 655360, 7, 65546, 655360, 8, 327683, 196608, 5, 327684, 262144, 5, 327685, 262144, 5, 327686, 262144, 5, 327687, 327680, 5, 393214, 524288, 5, 131074, 458752, 5, 327677, 655360, 5, 131078, 851968, 8, 131079, 917504, 8, 196614, 851968, 9, 196615, 917504, 9)
 
 [node name="td_player" parent="." instance=ExtResource("2_52bdy")]
+position = Vector2(97, 55)
+
+[node name="td_enemy" parent="." instance=ExtResource("3_jqq2t")]
+position = Vector2(221, 148)
