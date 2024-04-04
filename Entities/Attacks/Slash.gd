@@ -10,9 +10,13 @@ func _process(delta):
 		queue_free()
 		return
 	
-	for enemy in get_tree().get_note_in_group("enemy"):
+	for enemy in get_tree().get_nodes_in_group("Enemy"):
 		if self.overlaps_body(enemy):
 			enemy.take_damage(damage, self)
 			enemy.inertia = (enemy.global_position-self.global_position) \
 							.normalized() * knockback
 	pass
+	
+	
+	
+	

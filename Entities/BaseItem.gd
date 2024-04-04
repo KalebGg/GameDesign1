@@ -14,8 +14,8 @@ func remove():
 	queue_free()
 
 func interact(player):
-	""" to be implemented by child class """
-	#player.pickup_item(value)
+	""" To be implemented by child class """
+	# player.pickup_item(value)
 	remove()
 
 func _init(default_value: int = 1):
@@ -23,13 +23,12 @@ func _init(default_value: int = 1):
 
 func _process(delta):
 	for player in get_tree().get_nodes_in_group("Player"):
-		if $Area2D.overlap_body(player):
+		if $Area2D.overlaps_body(player):
 			interact(player)
-	current_time += delta # handle despawn flickering
+	current_time += delta  # Handle despawn flickering
 	if current_time >= flicker_start_time and current_time <= time_to_despawn:
-		$AnimatedSprite2D.visable = fmod(current_time, flicker_interval) \
+		$AnimatedSprite2D.visible = fmod(current_time, flicker_interval) \
 									< (flicker_interval / 2)
 	if current_time >= time_to_despawn:
-	
 		remove()
 	pass
