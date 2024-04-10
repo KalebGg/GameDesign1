@@ -416,3 +416,5 @@ position = Vector2(-60, -22)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(-2, 1)
 shape = SubResource("CapsuleShape2D_6x0md")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

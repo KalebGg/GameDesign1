@@ -54,9 +54,10 @@ signal recovered
 
 var drops = ["drop_coin", "drop_heart"]
 
-var coin_scene = preload("res://entities/coin.tscn")
+var coin_scene = preload("res://Entities/base_item.tscn")
 var heart_scene = preload("res://entities/mini_heart.tscn")
 var damage_shader = preload("res://assets/shaders/take_damage.tres")
+var death_sound = preload("res://assets/Sounds/enemydeath.wav")
 
 func vec2_offset():
 	return Vector2(randf_range(-10.0, 10.0), randf_range(-10.0, 10.0))
@@ -105,7 +106,8 @@ func take_damage(dmg, attacker=null):
 		$AnimatedSprite2D.material.set_shader_parameter("intensity", dmg_intensity)
 		if HEALTH <= 0:
 			drop_items()
-			# TODO: play death sound
+			aud_player.stream = death_sound
+			aud_player.play()
 			queue_free()
 		else:
 			if attacker != null:
