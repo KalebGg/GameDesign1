@@ -22,7 +22,7 @@ var charge_time = 2.5
 var charge_start_time = 0.0
 
 var slash_scene = preload("res://entities/attacks/slash.tscn")
-var menu_scene = preload("res://my_gui.tscn")
+var menu_scene = preload()
 var damage_shader = preload("res://assets/shaders/take_damage.tres")
 var attack_sound = preload("res://assets/sounds/slash.wav")
 var menu_instance = null
@@ -140,6 +140,12 @@ func _physics_process(delta):
 			charge_start_time = Time.get_time_dict_from_system().second
 			data.state = STATES.CHARGING
 		
+		if Input.is_action_just_pressed("ui_select"):
+			for entity in get_tree().get_nodes_in_group("interactable"):
+				if entity.in_range(self):
+					entity.interact(self)
+					data.state = state.IDLE
+					return
 		if Input.is_action_just_released("ui_accept"):
 			var cur_time = Time.get_time_dict_from_system().second
 			var charge_duration = cur_time - charge_start_time
