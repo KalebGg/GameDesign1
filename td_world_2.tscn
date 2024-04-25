@@ -1120,4 +1120,4 @@ position = Vector2(33, -25)
 position = Vector2(39, 57)
 
 [node name="SmallChest2" parent="." instance=ExtResource("4_5c47u")]
-position = Vector2(66, 58)
+position = Vector2(66, 57)
