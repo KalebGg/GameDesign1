@@ -10,13 +10,9 @@ const SPEED = 200.0
 var inertia = Vector2()
 var look_direction = Vector2.DOWN  # (0, 1)
 
-var menu_scene = preload(\"res://my_gui.tscn\")
 var menu_instance = null
 
-func _ready():
-	menu_instance = menu_scene.instantiate()
-	$Camera2D.add_child.call_deferred(menu_instance)
-	menu_instance.hide()
+
 
 func _physics_process(delta):
 	var direction = Vector2(

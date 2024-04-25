@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://df01ejof8isn6"]
+[gd_scene load_steps=7 format=3 uid="uid://df01ejof8isn6"]
 
 [ext_resource type="PackedScene" uid="uid://dhh4bhidbdogx" path="res://td_player.tscn" id="1_ovemh"]
 [ext_resource type="PackedScene" uid="uid://dfx5t41cnwp35" path="res://td_enemy.tscn" id="2_jus5l"]
 [ext_resource type="Texture2D" uid="uid://bji2kukajsj58" path="res://assets/sprites/zeldalike/Overworld.png" id="3_7hn6y"]
+[ext_resource type="PackedScene" uid="uid://btmmaprcyeysf" path="res://Entities/Objects/SmallChest.tscn" id="4_5c47u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k8xny"]
 texture = ExtResource("3_7hn6y")
@@ -1114,3 +1115,9 @@ position = Vector2(274, -24)
 
 [node name="td_player" parent="." instance=ExtResource("1_ovemh")]
 position = Vector2(33, -25)
+
+[node name="SmallChest" parent="." instance=ExtResource("4_5c47u")]
+position = Vector2(39, 57)
+
+[node name="SmallChest2" parent="." instance=ExtResource("4_5c47u")]
+position = Vector2(66, 58)
