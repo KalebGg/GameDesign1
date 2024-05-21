@@ -96,27 +96,6 @@ func turn_toward_player_location(location: Vector2):
 			closest_state = STATES.values()[i]
 	AI_STATE = closest_state
 
-func take_damage(dmg, attacker=null):
-	if damage_lock == 0.0:
-		AI_STATE = STATES.DAMAGED
-		HEALTH -= dmg
-		damage_lock = 0.2
-		animation_lock = 0.2
-		var dmg_intensity = clamp(1.0-((HEALTH+0.01)/MAX_HEALTH), 0.1, 0.8)
-		$AnimatedSprite2D.material = damage_shader.duplicate()
-		$AnimatedSprite2D.material.set_shader_parameter("intensity", dmg_intensity)
-		if HEALTH <= 0:
-			drop_items()
-			aud_player.stream = death_sound
-			aud_player.play()
-			await aud_player.finished
-			queue_free()
-		else:
-			if attacker != null:
-				var loc = attacker.global_position
-				await recovered
-				turn_toward_player_location(loc)
-	pass
 
 func _physics_process(delta):
 	animation_lock = max(animation_lock - delta, 0.0)
@@ -134,35 +113,6 @@ func _physics_process(delta):
 			AI_STATE = STATES.IDLE
 			recovered.emit()
 		for player in get_tree().get_nodes_in_group("Player"):
-			
-				if player.damage_lock == 0.0:
-					var inert = (player.global_position-self.global_position)
-					player.inertia = inert.normalized() * knockback
-					player.take_damage(DAMAGE)
-				else:
-					continue
-				if (raycastM.is_colliding() and raycastM.get_collider() == player) or \
-				   (raycastL.is_colliding() and raycastL.get_collider() == player) or \
-				   (raycastR.is_colliding() and raycastR.get_collider() == player):
-					turn_toward_player_location(player.global_position)
-		
-		ai_timer = clamp(ai_timer - delta, 0.0, ai_timer_max)
-		if ai_timer == 0.0:
-			if AI_STATE == STATES.IDLE:
-				var rnd_move = randi() % 4
-				AI_STATE = STATES.values()[rnd_move+1]
-			else:
-				AI_STATE = STATES.IDLE
-			ai_timer = ai_timer_max
-		
-		var direction = state_directions[int(AI_STATE)]
-		velocity = direction * SPEED
-		
-		var anim = state_animations[int(AI_STATE)]
-		if anim and not anim_player.is_playing():
-			anim_player.play(anim)
-		if AI_STATE == STATES.IDLE and anim_player.is_playing():
-			anim_player.stop()
 		
 		velocity += inertia
 		move_and_slide()

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvl5uht6b1py3"]
+
+[ext_resource type="Texture2D" uid="uid://bbl22jgxjjst3" path="res://icon.svg" id="1_qtnhg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36io1"]
+size = Vector2(41, 74)
+
+[node name="PLT_PLAYER_PRO" type="CharacterBody2D"]
+metadata/_edit_vertical_guides_ = [-45783.0]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.5, 11)
+shape = SubResource("RectangleShape2D_36io1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3, 10)
+scale = Vector2(0.351563, 0.605469)
+texture = ExtResource("1_qtnhg")
