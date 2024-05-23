@@ -6,11 +6,18 @@ const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity_on = true
 
+func _ready():
+
+	pass
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().paused = true
+	
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor() and gravity_on:
 		velocity.y += gravity * delta
 
 	# Handle Jump.
@@ -24,5 +31,26 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
+	if Input.is_action_just_pressed("ui_home"):
+		self.scale *= 2
+	if Input.is_action_just_pressed("ui_end"):
+		self.scale /= 2
+	if Input.is_action_just_pressed("ui_page_up"):
+		self.rotation_degrees += 5
+	if Input.is_action_just_pressed("ui_page_down"):
+		self.rotation_degrees -= 5
+	if Input.is_action_just_pressed("ui_text_completion_replace"):  # Tab
+		self.position.x += 500
+	if Input.is_action_just_pressed("ui_text_backspace"):
+		self.position.x -= 500
+	if Input.is_action_just_pressed("ui_text_toggle_insert_mode"):  # Insert
+		self.position.y += JUMP_VELOCITY / 2.0
+	if Input.is_action_just_pressed("ui_text_delete"):
+		self.position.y -= JUMP_VELOCITY / 2.0
+	if Input.is_action_just_pressed("ui_cancel"):  # Escape
+		gravity_on = not gravity_on
+	
 	move_and_slide()
+
+

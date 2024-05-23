@@ -660,6 +660,8 @@ sources/2 = SubResource("TileSetAtlasSource_jyddy")
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_grv73")
 
+[node name="world" type="StaticBody2D" parent="."]
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 196)
 tile_set = SubResource("TileSet_fi1h8")
@@ -670,34 +672,64 @@ layer_0/tile_data = PackedInt32Array(65536, 1441792, 22, 65537, 1507328, 22, 655
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap"]
 visibility_layer = 0
-position = Vector2(-81, -213)
+position = Vector2(-82, -213)
 scale = Vector2(1, 1.10662)
 polygon = PackedVector2Array(97, 246.698, 97, 208.744, 101, 201.515, 112, 197.9, 113, 194.286, 146, 194.286, 156, 190.671, 162, 169.887, 165, 167.176, 176, 165.369, 187, 161.754, 192, 151.814, 255, 151.814, 331, 152.718, 321, 159.043, 316, 164.465, 311, 167.176, 308, 175.309, 301, 188.864, 285, 192.478, 274, 198.804, 274, 207.841, 274, 249.409, 261, 250.312, 258, 251.216, 255, 259.349, 250, 262.963, 232, 266.578, 225, 272, 213, 253.927, 203, 251.216, 203, 215.07, 200, 212.359, 160, 213.262, 157, 217.781, 147, 220.492, 147, 253.927, 145, 255.734, 137, 262.963, 105, 262.963, 97, 257.542)
+
+[node name="Polygon2D" type="Polygon2D" parent="TileMap/CollisionPolygon2D"]
+position = Vector2(81, 17.1694)
+scale = Vector2(1, 0.903653)
+polygon = PackedVector2Array(250, 151, 240, 158, 234, 164, 228, 169, 226, 179, 222, 188, 217, 192, 207, 193, 201, 195, 197, 198, 193, 202, 192, 203, 192, 210, 195, 210, 195, 223, 192, 229, 194, 241, 194, 257, 179, 257, 177, 261, 175, 267, 170, 271, 159, 273, 152, 275, 144, 281, 130, 258, 122, 257, 122, 217, 78.357, 217, 76, 221, 72, 223, 64, 225, 66, 261, 64, 265, 60, 268, 52, 272, 25, 272, 20, 269, 17, 265, 17, 210, 22, 204, 29, 202, 32, 198, 65, 198, 71, 196, 76, 188, 80, 178, 79, 170, 84, 167, 104.819, 161.043, 109, 157, 111, 151)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="TileMap"]
 visibility_layer = 0
 position = Vector2(0, -196)
 polygon = PackedVector2Array(276, 176, 272, 172, 272, 144, 274, 141, 276, 138, 371, 138, 374, 143, 375, 146, 375, 173, 370, 177, 366, 179, 287, 179, 281, 179)
 
+[node name="Polygon2D" type="Polygon2D" parent="TileMap/CollisionPolygon2D2"]
+position = Vector2(81, 15.3621)
+scale = Vector2(1, 0.903653)
+polygon = PackedVector2Array(195, 135.714, 290, 135.714, 292, 140.14, 294, 143.46, 294, 170.019, 292, 175.552, 289, 178.872, 287, 179.978, 198, 179.978, 193, 176.658, 191, 173.339, 191, 143.46, 193, 141.247, 194, 137.927)
+
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="TileMap"]
 visibility_layer = 0
 position = Vector2(176, -212)
 polygon = PackedVector2Array(276, 176, 272, 172, 272, 144, 274, 141, 276, 138, 371, 138, 374, 143, 375, 146, 375, 173, 370, 177, 366, 179, 287, 179, 281, 179)
+
+[node name="Polygon2D" type="Polygon2D" parent="TileMap/CollisionPolygon2D3"]
+position = Vector2(81, 15.3621)
+scale = Vector2(1, 0.903653)
+polygon = PackedVector2Array(192, 141.247, 195, 135.714, 290, 135.714, 293, 140.14, 294, 144.567, 294, 173.339, 290, 177.765, 286, 179.978, 199, 181.085, 194, 177.765, 191, 173.339, 191, 146.78)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="TileMap"]
 visibility_layer = 0
 position = Vector2(352, -180)
 polygon = PackedVector2Array(276, 176, 272, 172, 272, 144, 274, 141, 276, 138, 371, 138, 374, 143, 375, 146, 375, 173, 370, 177, 366, 179, 287, 179, 281, 179)
 
+[node name="Polygon2D" type="Polygon2D" parent="TileMap/CollisionPolygon2D4"]
+position = Vector2(65, 22)
+scale = Vector2(1, 0.903653)
+polygon = PackedVector2Array(211, 169.313, 216, 173.339, 302, 172.633, 306, 170.419, 310, 165.993, 310, 150.5, 310, 137.221, 307, 131.688, 305, 128.368, 213, 128.368, 211, 129.475, 208, 132.794, 207, 136.114, 207, 165.993)
+
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="TileMap"]
 visibility_layer = 0
 position = Vector2(-19, -1)
 polygon = PackedVector2Array(800, 14, 801, 9, 805, 6, 810, 5, 819, 3, 820, 1, 824, -1, 827, -1, 837, -4, 900, -4, 904, -6, 914, -17, 916, -20, 952, -20, 953, 49, 947, 49, 947, 58, 931, 57, 929, 54, 926, 49, 916, 49, 907, 48, 904, 46, 901, 43, 900, 43, 900, 49, 892, 49, 886, 53, 882, 58, 880, 56, 878, 54, 866, 65, 854, 54, 842, 65, 831, 54, 818, 67, 814, 65, 807, 52, 803, 52, 802, 30, 802, 17)
 
+[node name="Polygon2D" type="Polygon2D" parent="TileMap/CollisionPolygon2D5"]
+position = Vector2(81, 15.3621)
+scale = Vector2(1, 0.903653)
+polygon = PackedVector2Array(753, -19.2132, 817, -20.3199, 827, -25.853, 834, -36.9192, 870, -36.9192, 872, 22.8383, 872, 37.2244, 867, 37.2244, 866, 46.0773, 851, 46.0773, 845, 36.1178, 833, 35.0111, 830, 36.1178, 826, 35.0111, 822, 31.6913, 821, 29.478, 819, 30.5847, 819, 37.2244, 809, 37.2244, 803, 42.7575, 801, 48.2906, 797, 42.7575, 785, 54.9303, 773, 41.6508, 761, 53.8237, 749, 42.7575, 735, 57.1435, 731, 50.5038, 727, 40.5442, 722, 39.4376, 724, -8.14705)
+
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="TileMap"]
 visibility_layer = 0
 position = Vector2(-38, -1)
 polygon = PackedVector2Array(1057, 72, 1057, 60, 1057, 49, 1062, 45, 1062, 33, 1060, 31, 1062, 28, 1126, 28, 1126, 34, 1128, 37, 1127, 59, 1145, 60, 1190, 60, 1191, 93, 1192, 106, 1192, 115, 1190, 123, 1184, 119, 1174, 130, 1162, 118, 1155, 125, 1151, 130, 1145, 124, 1138, 119, 1125, 131, 1057, 131)
+
+[node name="Polygon2D" type="Polygon2D" parent="TileMap/CollisionPolygon2D6"]
+position = Vector2(-863, -146)
+scale = Vector2(8.2, 9.71426)
+polygon = PackedVector2Array(234.024, 28.5148, 234.268, 20.1765, 234.756, 20.1765, 234.756, 18.4265, 234.512, 18.4265, 234.878, 18.0148, 242.561, 18.0148, 242.561, 21.2059, 250.366, 21.3089, 250.366, 27.5883, 249.634, 27.1766, 248.415, 28.3089, 246.951, 27.0736, 245.488, 28.206, 244.024, 27.0736, 242.439, 28.5148)
 
 [node name="PLT_PLAYER_PRO" parent="." instance=ExtResource("5_aw33o")]
 position = Vector2(51, 44)
